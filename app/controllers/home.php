@@ -5,6 +5,7 @@ class Home extends Controller {
 	public function index($param = '') {
 
 		// set $user as instance of 'User' by calling $model() from Controller class
+		// 'User' is from Model
 		$user = $this->model('User');
 
 		// set name as the passed $param
@@ -12,6 +13,7 @@ class Home extends Controller {
 
 		// pass data to View
 		$this->view('home/index', ['name' => $user->name]);
+
 	}
 
 }
