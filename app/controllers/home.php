@@ -28,6 +28,8 @@ class Home extends Controller {
 			'email'			=> $email
 		]);
 
+		$this->view('home/index', ['name' => $username]);
+
 	}
 
 }
