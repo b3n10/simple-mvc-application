@@ -2,8 +2,15 @@
 
 class Home extends Controller {
 
-	public function index($param) {
-		return $param;
+	public function index($param = '') {
+
+		// set $user as instance of 'User' by calling $model() from Controller class
+		$user = $this->model('User');
+
+		// set name as the passed $param
+		$user->name = $param;
+
+		echo $user->name;
 	}
 
 }
