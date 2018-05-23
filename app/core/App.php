@@ -7,7 +7,19 @@ class App {
 						$params			= [];
 
 	public function __construct() {
-		print_r($this->parseUrl());
+		$url = $this->parseUrl();
+
+		// check if first index in $url array is a controller (or if it's a file in controllers folder)
+		if (file_exists('../app/controllers/' . $url[0] . '.php')) {
+
+			// set the protected $controller to that file
+			$this->controller = $url[0];
+
+			// remove that index from array
+			unset($url[0]);
+
+		}
+
 	}
 
 	public function parseUrl() {
