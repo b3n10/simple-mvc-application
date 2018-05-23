@@ -10,6 +10,7 @@ class Home extends Controller {
 		// set name as the passed $param
 		$user->name = $param;
 
+		// pass data to View
 		$this->view('home/index', ['name' => $user->name]);
 	}
 
