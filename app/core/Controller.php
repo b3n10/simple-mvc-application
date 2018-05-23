@@ -1,5 +1,6 @@
 <?php
 // Controller handles the Model
+// then output to View
 
 class Controller {
 
@@ -10,6 +11,10 @@ class Controller {
 
 		// return instance of $model
 		return new $model();
+
+	}
+
+	public function view($view_name, $data) {
 
 	}
 
