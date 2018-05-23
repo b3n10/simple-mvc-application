@@ -16,6 +16,7 @@ class Home extends Controller {
 		$user->name = $param;
 
 		// pass data to View
+		// 'home/index' is not the URL, but the file ('home' directory, 'index.php' file)
 		$this->view('home/index', ['name' => $user->name]);
 
 	}
