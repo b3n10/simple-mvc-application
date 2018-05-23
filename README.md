@@ -11,7 +11,9 @@
 - Start: May 23, 2018
 - End: May 23, 2018
 
-#### For rewrite to work:
+#### Note:
+
+##### For rewrite to work:
 - For 500 internal error, see: https://stackoverflow.com/a/31451383/6353682
 - Make sure to run: sudo a2enmod rewrite
 - Then add these lines on apache2.conf or sites-available/xxx.conf if enabled:
@@ -24,6 +26,11 @@
 </Directory>
 ```
 - where directory could be /var/www/ or the directory in your sites-available/xxx.conf
+
+- To autoload classes specified in composer.json, make sure to run
+```sh
+composer dump-autoload
+```
 
 #### Credit:
 - [Codecourse YouTube Channel](https://www.youtube.com/user/phpacademy/about)
