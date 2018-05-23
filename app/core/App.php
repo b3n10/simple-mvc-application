@@ -43,6 +43,9 @@ class App {
 			// if 3rd index on array is set, pass it as array to protected $param, else empty array
 			$this->params = $url ? array_values($url) : [];
 
+			// run the method by passing an array (object of class and method) and it's params
+			echo call_user_func_array([$this->controller, $this->method], $this->params);
+
 		}
 
 	}
