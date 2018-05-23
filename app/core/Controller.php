@@ -14,7 +14,12 @@ class Controller {
 
 	}
 
-	public function view($view_name, $data) {
+	public function view($view, $data = []) {
+
+		// require $view ('file' or 'directory/file')
+		require_once '../app/views/' . $view . '.php';
+
+		// $data will be passed to $view file
 
 	}
 
