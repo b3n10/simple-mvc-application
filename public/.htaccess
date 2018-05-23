@@ -1,0 +1,15 @@
+Options -Multiviews
+RewriteEngine On
+
+# base URL
+RewriteBase /mvc/public/
+
+# directory checking
+RewriteCond %{REQUEST_FILENAME} !-d
+# file checking
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# take the value of $_GET['url'] and pass to index.php as a query string
+# ^(.+)$ will match everything
+# $1 is the first parameter
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
