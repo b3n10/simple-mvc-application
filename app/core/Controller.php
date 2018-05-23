@@ -19,7 +19,7 @@ class Controller {
 		// require $view ('file' or 'directory/file')
 		require_once '../app/views/' . $view . '.php';
 
-		// $data will be passed to $view file
+		// this method will run the required file then pass $data as the parameter
 
 	}
 
