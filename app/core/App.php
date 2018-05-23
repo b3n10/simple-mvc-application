@@ -21,7 +21,10 @@ class App {
 		}
 
 		// even if $url[0] is not a valid file, require default protected $controller ('home.php')
-		require_once '../app/controller/' . $this->controller . '.php';
+		require_once '../app/controllers/' . $this->controller . '.php';
+
+		// create instance of controller
+		$this->controller = new $this->controller;
 
 	}
 
@@ -34,6 +37,7 @@ class App {
 			// sanitize the url with filter_var
 			// explode to an array by slash
 			return explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
+
 		}
 
 	}
