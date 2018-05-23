@@ -20,6 +20,9 @@ class App {
 
 		}
 
+		// even if $url[0] is not a valid file, require default protected $controller ('home.php')
+		require_once '../app/controller/' . $this->controller . '.php';
+
 	}
 
 	public function parseUrl() {
