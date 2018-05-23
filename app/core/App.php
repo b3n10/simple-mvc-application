@@ -27,6 +27,7 @@ class App {
 
 	public function parseUrl() {
 
+		// if query string is passed
 		if (isset($_GET['url'])) {
 
 			// remove the trailing slash
