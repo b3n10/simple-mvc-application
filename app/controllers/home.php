@@ -23,13 +23,21 @@ class Home extends Controller {
 
 	public function create($username = '', $email = '') {
 
-		// insert data to db
-		User::create([
-			'username'	=> $username,
-			'email'			=> $email
-		]);
+		try {
 
-		$this->view('home/index', ['name' => $username]);
+			// insert data to db
+			User::create([
+				'username'	=> $username,
+				'email'			=> $email
+			]);
+
+			$this->view('home/index', ['name' => $username]);
+
+		} catch (Exception $e) {
+
+			die($e->getMessage());
+
+		}
 
 	}
 
