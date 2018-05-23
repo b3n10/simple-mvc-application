@@ -1,4 +1,5 @@
 <?php
+// handles the model
 
 class Controller {
 
