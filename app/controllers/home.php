@@ -16,4 +16,14 @@ class Home extends Controller {
 
 	}
 
+	public function create($username = '', $email = '') {
+
+		// insert data to db
+		User::create([
+			'username'	=> $username,
+			'email'			=> $email
+		]);
+
+	}
+
 }
