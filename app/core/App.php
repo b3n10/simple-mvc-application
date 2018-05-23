@@ -12,10 +12,10 @@ class App {
 		// check if first index in $url array is a controller (or if it's a file in controllers folder)
 		if (file_exists('../app/controllers/' . $url[0] . '.php')) {
 
-			// set the protected $controller to that file
+			// set protected $controller to that file
 			$this->controller = $url[0];
 
-			// remove that index from array
+			// remove controller so method & param are left in the array
 			unset($url[0]);
 
 		}
@@ -25,6 +25,22 @@ class App {
 
 		// create instance of controller
 		$this->controller = new $this->controller;
+
+		// if there is 2nd index
+		if (isset($url[1])) {
+
+			// if $url[1] is a method in $this->controller
+			if (method_exists($this->controller, $url[1])) {
+
+				// set protected method to that method
+				$this->method = $url[1];
+
+				// remove method so param is left in the array
+				unset($url[1]);
+
+			}
+
+		}
 
 	}
 
