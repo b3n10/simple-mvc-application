@@ -2,6 +2,10 @@
 
 class Home extends Controller {
 
+	// to run method, apply in URL
+	// e.g.
+	// http://localhost/mvc/public/home/index/jiroh/jiroh@email.com
+	// http://localhost/mvc/public/home/create/jiroh/jiroh@email.com
 	public function index($param = '') {
 
 		// set $user as instance of 'User' by calling $model() from Controller class
